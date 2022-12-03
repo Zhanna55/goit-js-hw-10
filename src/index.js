@@ -28,9 +28,9 @@ function getCountries(e) {
           'Too many matches found. Please enter a more specific name.'
         );
       } else if (dataCountries.length >= 2 && dataCountries.length <= 10) {
-        fetchRestCountries.fetchCountries().then(renderCountryList);
+        renderCountryList(dataCountries);
       } else if (dataCountries.length === 1) {
-        fetchRestCountries.fetchCountries().then(renderOneCountry);
+        renderOneCountry(dataCountries);
       } else if (dataCountries.length === 0) {
         Notiflix.Notify.failure('Oops, there is no country with that name');
       }
